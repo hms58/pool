@@ -8,7 +8,7 @@ var (
 )
 
 //Pool 基本方法
-type Pool interface {
+type Pooler interface {
 	Get() (interface{}, error)
 
 	Put(interface{}) error
@@ -18,4 +18,7 @@ type Pool interface {
 	Release()
 
 	Len() int
+
+	Stats() *Stats
+	ShowStats()
 }
